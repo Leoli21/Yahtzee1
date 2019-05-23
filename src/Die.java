@@ -3,9 +3,7 @@ import java.util.Random;
 public class Die
 {
 	private int value;
-	public Die()
-	{
-		
+	public Die(){
 	}
 	
 	public int roll()

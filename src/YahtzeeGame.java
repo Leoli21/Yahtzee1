@@ -10,6 +10,13 @@ public class YahtzeeGame {
 			
 		System.out.println("getValue(): " + die1.getValue());
 	
+		Yahtzee yahtzee = new Yahtzee();
+		yahtzee.rollAllDice();
+		System.out.println(yahtzee.showDice());
+		System.out.println("Get value of die number 3 is " + yahtzee.getADie(3));
+		//System.out.println(yahtzee.RollADice(3));
+		System.out.println(yahtzee.showDice());
+		System.out.println("After re-roll the die number 3: " + yahtzee.getADie(3));
 
 	}
 

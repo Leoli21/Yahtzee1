@@ -14,7 +14,7 @@ public class Yahtzee
 	public void rollAllDice()
 	{
 		for(int i = 0; i < 5; i++)
-			dice[i].roll()
+			dice[i].roll();
 	}
 	
 	public void RollADice(int dieNumber)
@@ -23,11 +23,11 @@ public class Yahtzee
 	}
 	public int getADie(int dieNumber)
 	{
-		
+		return dice[dieNumber].getValue();
 	}
 	public String showDice()
 	{
-		
+		return "+------+---+---+---+---+---+" + "\n" + "| Dice | 1 | 2 | 3 | 4 | 5 |" + "\n" + "+------+---+---+---+---+---+" + "\n" + "| Face |" + getADie(1) + "|" + getADie(2) + "|" + getADie(3) + "|" + getADie(4) + "|" + getADie(5) + "|" + "\n" + "+------+---+---+---+---+---+";	
 	}
 	
 }
