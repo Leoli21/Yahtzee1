@@ -2,6 +2,7 @@
 public class Yahtzee 
 {
 	private Die[] dice;
+	private int [] count;
 	
 	public Yahtzee()
 	{
@@ -9,6 +10,9 @@ public class Yahtzee
 		
 		for (int i = 0; i < 5; i++)
 			dice[i] = new Die();
+		
+		count = new int[6];
+		updateCount();
 	}
 	
 	public void rollAllDice()
@@ -17,9 +21,9 @@ public class Yahtzee
 			dice[i].roll();
 	}
 	
-	public void rollADie(int dieNumber)
+	public void rollADice(int dieNumber)
 	{
-		dice[dieNumber] = dice[dieNumber].roll();
+		dice[dieNumber].roll();
 	}
 	public int getADie(int dieNumber)
 	{
@@ -28,5 +32,48 @@ public class Yahtzee
 	public String showDice()
 	{
 		return "+------+---+---+---+---+---+" + "\n" + "| Dice | 1 | 2 | 3 | 4 | 5 |" + "\n" + "+------+---+---+---+---+---+" + "\n" + "| Face | " + dice[0].getValue() + " | " +  dice[1].getValue() + " | " + dice[2].getValue() + " | " + dice[3].getValue() + " | " + dice[4].getValue() + " | " + "\n" + "+------+---+---+---+---+---+";	
+	}
+	private int countUp (int value) 
+	{
+		
+		if (value == 1)
+		{
+			count[0] += 1;
+			return count[0];
+		}
+		else if (value == 2)
+		{
+			count[1]+= 1;
+			return count[1];
+		}
+		else if (value == 3)
+		{
+			count[2] += 1;
+			return count[2];
+		}
+		else if (value == 4)
+		{
+			count[3]+= 1;
+			return count[3];
+		}
+		else if (value == 5)
+		{
+			count[4]+= 1;
+			return count[4];
+		}
+		else
+		{
+			count[5] +=1;
+			return count[5];
+		}
+	}
+	
+	private void updateCount()
+	{
+		for (int i = 0; i < 6; i++)
+		{
+			count[i] = countUp(i + 1);
+			System.out.println("Number of " + (i + 1) + "s rolled: " + count[i]);
+		}
 	}
 }
