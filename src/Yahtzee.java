@@ -10,6 +10,9 @@ public class Yahtzee
 		
 		for (int i = 0; i < 5; i++)
 			dice[i] = new Die();
+		
+		count = new int[6];
+		updateCount();
 	}
 	
 	public void rollAllDice()
@@ -32,18 +35,45 @@ public class Yahtzee
 	}
 	private int countUp (int value) 
 	{
-		if (value == 1)
-			count[0] += 1;
-		else if (value == 2)
-			count[1] += 1;
-		else if (value == 3)
-			count[2] += 1;
-		else if (value == 4)
-			count[3] += 1;
-		else if (value == 5)
-			count[4] += 1;
-		return value;
 		
+		if (value == 1)
+		{
+			count[0] += 1;
+			return count[0];
+		}
+		else if (value == 2)
+		{
+			count[1]+= 1;
+			return count[1];
+		}
+		else if (value == 3)
+		{
+			count[2] += 1;
+			return count[2];
+		}
+		else if (value == 4)
+		{
+			count[3]+= 1;
+			return count[3];
+		}
+		else if (value == 5)
+		{
+			count[4]+= 1;
+			return count[4];
+		}
+		else
+		{
+			count[5] +=1;
+			return count[5];
+		}
 	}
 	
+	private void updateCount()
+	{
+		for (int i = 0; i < 6; i++)
+		{
+			count[i] = countUp(i + 1);
+			System.out.println("Number of " + (i + 1) + "s rolled: " + count[i]);
+		}
+	}
 }
