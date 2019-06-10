@@ -14,41 +14,59 @@ public class YahtzeeGame {
 		String dieKeep = input.nextLine();
 		for (int i = 0; i <dieKeep.length(); i++)
 		{
-			if (dieKeep.contains("1"))
+			if(dieKeep.length() == 1)
 			{
-				yahtzee.rollADice(2);
-				yahtzee.rollADice(3);
-				yahtzee.rollADice(4);
-				yahtzee.rollADice(5);
+				if (dieKeep.contains("1"))
+				{
+					yahtzee.rollADice(2);
+					yahtzee.rollADice(3);
+					yahtzee.rollADice(4);
+					yahtzee.rollADice(5);
+				}
+				else if(dieKeep.contains("2"))
+				{
+					yahtzee.rollADice(1);
+					yahtzee.rollADice(3);
+					yahtzee.rollADice(4);
+					yahtzee.rollADice(5);
+				}
+				else if(dieKeep.contains("3"))
+				{
+					yahtzee.rollADice(1);
+					yahtzee.rollADice(2);
+					yahtzee.rollADice(4);
+					yahtzee.rollADice(5);
+				}
+				else if(dieKeep.contains("4"))
+				{
+					yahtzee.rollADice(1);
+					yahtzee.rollADice(2);
+					yahtzee.rollADice(3);
+					yahtzee.rollADice(5);
+				}
+				else if(dieKeep.contains("5"))
+				{
+					yahtzee.rollADice(1);
+					yahtzee.rollADice(2);
+					yahtzee.rollADice(3);
+					yahtzee.rollADice(4);
+				}
 			}
-			else if(dieKeep.contains("2"))
+			else if (dieKeep.length() ==2)
 			{
-				yahtzee.rollADice(1);
-				yahtzee.rollADice(3);
-				yahtzee.rollADice(4);
-				yahtzee.rollADice(5);
+				if (dieKeep.contains("1") && dieKeep.contains("2"))
+				{
+					yahtzee.rollADice(3);
+					yahtzee.rollADice(4);
+					yahtzee.rollADice(5);
+				}
+				else if(dieKeep.contains("2") && dieKeep.contains("3"))
 			}
-			else if(dieKeep.contains("3"))
-			{
-				yahtzee.rollADice(1);
-				yahtzee.rollADice(2);
-				yahtzee.rollADice(4);
-				yahtzee.rollADice(5);
-			}
-			else if(dieKeep.contains("4"))
-			{
-				yahtzee.rollADice(1);
-				yahtzee.rollADice(2);
-				yahtzee.rollADice(3);
-				yahtzee.rollADice(5);
-			}
-			else if(dieKeep.contains("5"))
-			{
-				yahtzee.rollADice(1);
-				yahtzee.rollADice(2);
-				yahtzee.rollADice(3);
-				yahtzee.rollADice(4);
-			}
+
+	
+
+
+	
 		}
 		System.out.println(yahtzee.getScoreCard());
 		
