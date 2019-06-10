@@ -34,13 +34,14 @@ public class Yahtzee
 		for(int i = 0; i < 5; i++)
 		{
 			dice[i].roll();
+			updateCount();
 		}
 	}
 	
 	public void rollADice(int dieNumber)
 	{
 		dice[dieNumber-1].roll();
-
+		updateCount();
 	}
 	
 	public int getADie(int dieNumber)
@@ -54,45 +55,25 @@ public class Yahtzee
 	}
 	
 	
-	private void countUp(int value) 
-	{							
-				
-		if (value == 1)
+	private int countUp(int value) 
+	{			
+		int c = 0;
+		for (int i = 0; i < dice.length; i ++)
 		{
-			count[0] += 1;						
+			if (dice[i].getValue() == value)
+				c++;
 		}
-		else if (value == 2)
-		{
-			count[1]+= 1;						
-		}
-		else if (value == 3)
-		{
-			count[2] += 1;					
-		}
-		else if (value == 4)
-		{
-			count[3]+= 1;			
-		}
-		else if (value == 5)
-		{
-			count[4]+= 1;		
-		}
-		else if (value == 6)
-		{
-			count[5] +=1;
-		}
+		return c;
+		
 	}
 	
 	private void updateCount()
 	{
-		//for each dice get the value and update 
-		for (int i=1; i<6; i++)
-		{
-			int value = getADie(i);
-			countUp(value);
-		}
-	
+	for(int i = 0; i < 6; i++)
+		count[i] = countUp(i + 1);
 	}
+
+
 	
 	//The Upper Section Scoring
 	public int getScoreOnes()
@@ -222,12 +203,12 @@ public class Yahtzee
 	public String getScoreCard()
 	{
 		return showDice() + "\n\n\t" + "    Ones: " + getScoreOnes() + "\n\t" + "    Twos: " + getScoreTwos()  
-				+ "\n\t" + "  Threes: " + getScoreThrees() + "\n\t" + "   Fours: " + getScoreFours() + 
-				"\n\t" + "   Fives: " + getScoreFives() + "\n\t" + "   Sixes: " + getScoreSixes() + "\n\nThree of a Kind: " 
-				+ getScoreThreeOfAKind() + "\n Four Of a Kind: " + getScoreFourOfAKind() + "\n     Full House: "
-				+ getScoreFullHouse() + "\n Small Straight: " + getScoreSmallStraight() + "\n Large Straight: "
-				+ getScoreLargeStraight() + "\n\t Chance: " + getScoreChance() + "\n\t Yahzee: " 
-				+ getScoreYahtzee();
+			+ "\n\t" + "  Threes: " + getScoreThrees() + "\n\t" + "   Fours: " + getScoreFours() + 
+			"\n\t" + "   Fives: " + getScoreFives() + "\n\t" + "   Sixes: " + getScoreSixes() + "\n\nThree of a Kind: " 
+			+ getScoreThreeOfAKind() + "\n Four Of a Kind: " + getScoreFourOfAKind() + "\n     Full House: "
+			+ getScoreFullHouse() + "\n Small Straight: " + getScoreSmallStraight() + "\n Large Straight: "
+			+ getScoreLargeStraight() + "\n\t Chance: " + getScoreChance() + "\n\t Yahzee: " 
+			+ getScoreYahtzee();
 	}
 }
 	

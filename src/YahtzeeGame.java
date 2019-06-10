@@ -55,7 +55,7 @@ public class YahtzeeGame {
 			}
 			//Does not contain 1, but does contain 2, 3, 4, or 5
 			else if(dieKeep.contains("2"))
-			{
+			{  
 				yahtzee.rollADice(1);
 				if(dieKeep.contains("3"))
 				{
