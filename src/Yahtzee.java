@@ -221,9 +221,9 @@ public class Yahtzee
 	
 	public String getScoreCard()
 	{
-		return showDice() + "\n\n\t" + "    Ones: " + count[0] + "\n\t" + "    Twos: " + count[1]  
-				+ "\n\t" + "  Threes: " + count[2] + "\n\t" + "   Fours: " + count[3] + 
-				"\n\t" + "   Fives: " + count[3] + "\n\t" + "   Sixes: " + count[5] + "\n\nThree of a Kind: " 
+		return showDice() + "\n\n\t" + "    Ones: " + getScoreOnes() + "\n\t" + "    Twos: " + getScoreTwos()  
+				+ "\n\t" + "  Threes: " + getScoreThrees() + "\n\t" + "   Fours: " + getScoreFours() + 
+				"\n\t" + "   Fives: " + getScoreFives() + "\n\t" + "   Sixes: " + getScoreSixes() + "\n\nThree of a Kind: " 
 				+ getScoreThreeOfAKind() + "\n Four Of a Kind: " + getScoreFourOfAKind() + "\n     Full House: "
 				+ getScoreFullHouse() + "\n Small Straight: " + getScoreSmallStraight() + "\n Large Straight: "
 				+ getScoreLargeStraight() + "\n\t Chance: " + getScoreChance() + "\n\t Yahzee: " 
