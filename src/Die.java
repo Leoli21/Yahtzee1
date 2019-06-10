@@ -6,12 +6,12 @@ public class Die
 	public Die(){
 	}
 	
-	public int roll()
+	public void roll()
 	{
 		Random rand = new Random();
 		int num = rand.nextInt(6) + 1;
 		value = num;
-		return num;
+		//return num;
 	}
 	
 	public int getValue()

@@ -1,29 +1,72 @@
+import java.util.Scanner;
 
 public class YahtzeeGame {
 
 	public static void main(String[] args)
 	{
-		//Die die1 = new Die();
-		
-		//for(int i = 0; i < 10; i++)
-		//	System.out.println("roll(): " + die1.roll());
-			
-		
-		//System.out.println("getValue(): " + die1.getValue());
-	
+		Scanner input = new Scanner(System.in);
 		Yahtzee yahtzee = new Yahtzee();
-		yahtzee.rollAllDice();
-		//System.out.println(yahtzee.showDice());
-		//System.out.println("Get value of die number 3 is " + yahtzee.getADie(2));
-		//yahtzee.rollADice(2);
-		//System.out.println(yahtzee.showDice());
-		//System.out.println("After re-roll the die number 3: " + yahtzee.getADie(2));
+		//Current Score Card
+		System.out.println(yahtzee.getScoreCard());
 		
-		System.out.println(yahtzee.showDice());
+		//Enter die number(s) that user want to keep
+		System.out.println("Enter die number(s) to keep (separated by a space): ");
+		String dieKeep = input.nextLine();
+		for (int i = 0; i <dieKeep.length(); i++)
+		{
+			if (dieKeep.contains("1"))
+			{
+				yahtzee.rollADice(2);
+				yahtzee.rollADice(3);
+				yahtzee.rollADice(4);
+				yahtzee.rollADice(5);
+			}
+			else if(dieKeep.contains("2"))
+			{
+				yahtzee.rollADice(1);
+				yahtzee.rollADice(3);
+				yahtzee.rollADice(4);
+				yahtzee.rollADice(5);
+			}
+			else if(dieKeep.contains("3"))
+			{
+				yahtzee.rollADice(1);
+				yahtzee.rollADice(2);
+				yahtzee.rollADice(4);
+				yahtzee.rollADice(5);
+			}
+			else if(dieKeep.contains("4"))
+			{
+				yahtzee.rollADice(1);
+				yahtzee.rollADice(2);
+				yahtzee.rollADice(3);
+				yahtzee.rollADice(5);
+			}
+			else if(dieKeep.contains("5"))
+			{
+				yahtzee.rollADice(1);
+				yahtzee.rollADice(2);
+				yahtzee.rollADice(3);
+				yahtzee.rollADice(4);
+			}
+		}
+		System.out.println(yahtzee.getScoreCard());
+		
+		//Can reroll one more time
+		System.out.println("You can re-roll one more time. Do you want to roll one more time or end your turn?");;
+		System.out.println("If you want to end your turn simply enter: 1 2 3 4 5, and if you want to reroll, simply press Enter without entering a number.");
+		dieKeep = input.nextLine();
+		if(dieKeep.equals("1 2 3 4 5"))
+		{
+			System.out.println(yahtzee.getScoreCard());
+		}
+		else if (dieKeep.equals("")) 
+		{
+			yahtzee.rollAllDice();
+			System.out.println(yahtzee.getScoreCard());
+		}
 		
 		
-		
-
-	}
+	}	
 
 }
