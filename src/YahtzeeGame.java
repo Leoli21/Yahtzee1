@@ -32,6 +32,10 @@ public class YahtzeeGame {
 		{
 			yahtzee.rollADice(5);
 		}
+		else if (dieKeep.contains(""))
+		{
+			yahtzee.rollAllDice();
+		}
 
 		System.out.println(yahtzee.getScoreCard());
 		
