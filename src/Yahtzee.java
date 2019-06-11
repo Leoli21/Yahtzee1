@@ -16,19 +16,8 @@ public class Yahtzee
 		count = new int[6];
 		rollAllDice();
 		updateCount();
-		//printcount();
 	}
 	
-
-	//private void printcount()
-	//{
-	//	for (int i = 0; i < count.length; i++) 
-	//	{
-	//		System.out.println("Number of " + (i + 1) + "s rolled: " + count[i]);
-	//	}		
-	//}
-
-
 	public void rollAllDice()
 	{
 		for(int i = 0; i < 5; i++)
@@ -119,6 +108,7 @@ public class Yahtzee
 		}
 		return returnValue;
 	}
+	
 	public int getScoreFourOfAKind()
 	{
 		int returnValue = 0;

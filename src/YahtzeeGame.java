@@ -34,7 +34,6 @@ public class YahtzeeGame {
 		}
 
 		System.out.println(yahtzee.getScoreCard());
-		
 		//Can reroll one more time
 		System.out.println("You can re-roll one more time. Do you want to roll all dice one more time or end your turn?");;
 		System.out.println("If you want to end your turn simply enter: 1 2 3 4 5, and if you want to reroll, simply press Enter without entering a number.");
