@@ -12,27 +12,23 @@ public class YahtzeeGame {
 		//Enter die number(s) that user want to keep
 		System.out.println("Enter die number(s) to keep (separated by a space): ");
 		String dieKeep = input.nextLine();
-		if (dieKeep.contains(""))
-		{
-			yahtzee.rollAllDice();
-		}
-		else if(!dieKeep.contains("1"))
+		if(!dieKeep.contains("1"))
 		{
 			yahtzee.rollADice(1);
 		}
-		else if(!dieKeep.contains("2"))
+		if(!dieKeep.contains("2"))
 		{
 			yahtzee.rollADice(2);
 		}
-		else if(!dieKeep.contains("3"))
+		if(!dieKeep.contains("3"))
 		{
 			yahtzee.rollADice(3);
 		}
-		else if(!dieKeep.contains("4"))
+		if(!dieKeep.contains("4"))
 		{
 			yahtzee.rollADice(4);
 		}
-		else if(!dieKeep.contains("5"))
+		if(!dieKeep.contains("5"))
 		{
 			yahtzee.rollADice(5);
 		}
